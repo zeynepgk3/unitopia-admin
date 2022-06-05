@@ -1,43 +1,8 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- title değiştirildi -->
-    <title>Duyuru Ekle | Unitopian University - Unitopia Admin Panel</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/meanmenu.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/educate-custon-icon.css">
-    <link rel="stylesheet" href="css/morrisjs/morris.css">
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <link rel="stylesheet" href="css/summernote/summernote.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-
-<body>
-    <!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-    <!-- Start Left menu area -->
-    <div class="left-sidebar-pro">
+class LeftSideMenu extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML =
+            `
+        <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
@@ -63,9 +28,8 @@
                             </a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="All Professors" href="blog-approve.html"><span class="mini-sub-pro">Blog Onayla</span></a></li>
-                                <!-- eklenen -->
-                                <li><a title="All Professors" href="duyuru-create.html"><span class="mini-sub-pro">Duyuru Ekle</span></a></li>
-                                <li><a title="All Professors" href="yemek-add.html"><span class="mini-sub-pro">Yemek Listesi Ekle</span></a></li>
+                                <li><a title="All Professors" href="announcement-list.html"><span class="mini-sub-pro">Duyurular</span></a></li>
+                                <li><a title="All Professors" href="meal-list.html"><span class="mini-sub-pro">Yemek Listesi</span></a></li>
                             </ul>
                         </li>
                         <li class="active">
@@ -77,24 +41,20 @@
                                 <li><a title="All Professors" href="404.html"><span class="mini-sub-pro">Ayarlar</span></a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </nav>
             </div>
         </nav>
     </div>
-    <!-- End Left menu area -->
-    <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        `
+    }
+}
+customElements.define("left-side-menu", LeftSideMenu);
+
+class MyHeaderAdmin extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML =
+            `
         <div class="header-advance-area">
             <div class="header-top-area">
                 <div class="container-fluid">
@@ -195,56 +155,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <!-- tinymce Start-->
-        <div class="tinymce-area mg-b-15">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tinymce-single responsive-mg-b-30">
-                            <div class="alert-title">
-                                <h2>Yeni Duyuru Ekle</h2>
-                                <br>
-                                <form action="#" method="get">
-                                    <label for="duyuru-baslik">Başlık:</label>
-                                    <input type="text" name="duyuru-baslik">
-                                </form>
-                                <br>
-                                <h5>Duyuru</h5>
-                            </div>
-                            <div id="summernote1">
-                            </div>
-                            <button type="button" class="btn btn-custon-rounded-three btn-success">Yayınla</button>
-                            <button type="button" class="btn btn-custon-rounded-three btn-danger">Sil</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- tinymce End-->
-    </div>
-
-    <!-- Hazır JS kodları -->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/jquery-price-slider.js"></script>
-    <script src="js/jquery.meanmenu.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
-    <script src="js/metisMenu/metisMenu.min.js"></script>
-    <script src="js/metisMenu/metisMenu-active.js"></script>
-    <script src="js/summernote/summernote.min.js"></script>
-    <script src="js/summernote/summernote-active.js"></script>
-    <script src="js/tab.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/tawk-chat.js"></script>
-</body>
-
-</html>
+        `
+    }
+}
+customElements.define("my-header-admin", MyHeaderAdmin);
