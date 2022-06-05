@@ -12,33 +12,33 @@ class LeftSideMenu extends HTMLElement {
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow">
                                 <span class="educate-icon educate-home icon-wrap"></span>
                                 <span class="mini-click-non">Genel</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="All Professors" href="blog-create.html"><span class="mini-sub-pro">Blog Ekle</span></a></li>
-                                <li><a title="All Professors" href="blog-list.html"><span class="mini-sub-pro">Tüm Bloglarım</span></a></li>
+                                <li><a title="Create Blog" href="blog-create.html"><span class="mini-sub-pro">Blog Ekle</span></a></li>
+                                <li><a title="List Blogs" href="blog-list.html"><span class="mini-sub-pro">Tüm Bloglarım</span></a></li>
                             </ul>
                         </li>
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow">
                                 <span class="educate-icon educate-home icon-wrap"></span>
                                 <span class="mini-click-non">Admin</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="All Professors" href="blog-approve.html"><span class="mini-sub-pro">Blog Onayla</span></a></li>
-                                <li><a title="All Professors" href="announcement-list.html"><span class="mini-sub-pro">Duyurular</span></a></li>
-                                <li><a title="All Professors" href="meal-list.html"><span class="mini-sub-pro">Yemek Listesi</span></a></li>
+                                <li><a title="Approve Blog" href="blog-approve.html"><span class="mini-sub-pro">Blog Onayla</span></a></li>
+                                <li><a title="Announcement List" href="announcement-list.html"><span class="mini-sub-pro">Duyurular</span></a></li>
+                                <li><a title="Meal List" href="meal-list.html"><span class="mini-sub-pro">Yemek Listesi</span></a></li>
                             </ul>
                         </li>
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow">
                                 <span class="educate-icon educate-home icon-wrap"></span>
                                 <span class="mini-click-non">Diğer</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="All Professors" href="404.html"><span class="mini-sub-pro">Ayarlar</span></a></li>
+                                <li><a title="Settings" href="404.html"><span class="mini-sub-pro">Ayarlar</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,16 +63,17 @@ class MyHeaderAdmin extends HTMLElement {
                             <div class="header-top-wraper">
                                 <div class="row">
                                     <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                        <div class="menu-switcher-pro">
+                                        <!--<div class="menu-switcher-pro"> Collapse Button
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
 													<i class="educate-icon educate-nav"></i>
 												</button>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12"></div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                                <!--NOTIFICATION BELL
                                                 <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
@@ -132,7 +133,7 @@ class MyHeaderAdmin extends HTMLElement {
                                                             <a href="#">View All Notification</a>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li>-->
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                         <img src="img/product/pro4.jpg" alt="" />
