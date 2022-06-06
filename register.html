@@ -74,33 +74,25 @@
       <div class="content-error">
         <div class="hpanel">
           <div class="panel-body">
-            <form action="#" id="loginForm">
+            <form method="post" id="registerForm">
               <div class="row">
                 <div class="form-group col-lg-12">
                   <label>Ad Soyad</label>
-                  <input class="form-control">
+                  <input class="form-control" id="formName" name="name" >
                   <span class="help-block small">Lütfen ad ve soyad bilgilerinizi kimlik bilgilerinizle aynı ve aralarında boşluk bulunarak giriniz. Aksi takdirde kaydınız onaylanmayacaktır.</span>
                 </div>
                 <div class="form-group col-lg-6">
                   <label>Şifre</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" id="formPassword" name="password" >
                 </div>
                 <div class="form-group col-lg-6">
                   <label>Şifre Tekrar</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" id="formPasswordCheck" name="passwordCheck">
                 </div>
                 <div class="form-group col-lg-6">
                   <label>Mail Adresi</label>
-                  <input class="form-control">
+                  <input class="form-control" id="formEmail" name="email">
                   <span class="help-block small">Lütfen kurum tarafından size atanan mail adresinizi girin.</span>
-
-                </div>
-                <div class="form-group col-lg-6">
-                  <label>Uzantı </label>
-                  <select id="inputState" class="form-control">
-                    <option>@unitopia.edu.tr</option>
-                    <option>@ogr.unitopia.edu.tr</option>
-                  </select>
                 </div>
                 <!-- <div class="form-group col-lg-6"> -->
                 <!-- <label for="inputState">State</label> -->
@@ -109,7 +101,7 @@
 
           </div>
           <div class="text-center">
-            <button class="btn btn-success btn-block loginbtn">Kayıt Oluştur</button>
+            <button class="" id="registerbtn" type="button">Kayıt Oluştur</button>
           </div>
           </form>
         </div>
@@ -146,28 +138,13 @@
   <script src="js/jquery.scrollUp.min.js"></script>
   <!-- mCustomScrollbar JS
 		============================================ -->
-  <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
-  <!-- metisMenu JS
-		============================================ -->
-  <script src="js/metisMenu/metisMenu.min.js"></script>
-  <script src="js/metisMenu/metisMenu-active.js"></script>
-  <!-- tab JS
-		============================================ -->
-  <script src="js/tab.js"></script>
-  <!-- icheck JS
-		============================================ -->
-  <script src="js/icheck/icheck.min.js"></script>
-  <script src="js/icheck/icheck-active.js"></script>
   <!-- plugins JS
 		============================================ -->
   <script src="js/plugins.js"></script>
   <!-- main JS
 		============================================ -->
   <script src="js/main.js"></script>
-  <!-- tawk chat JS
-		============================================ -->
-  <script src="js/tawk-chat.js"></script>
+  <script src="js/xhr.js"></script>
 </body>
 
 </html>
