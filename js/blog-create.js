@@ -29,7 +29,7 @@ const saveData = () => {
     sendHttpRequest('POST', 'http://localhost:3001/blogs/create', {
 
         header: $('#blog-header').val(),
-        authorId: 1,
+        authorId: localStorage.getItem("id"),
         content: $('#blog-content').val()
 
     }).then(responseData => {
