@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const announcementId = urlParams.get('announcementId');
-const announcement_api_url = 'http://localhost:3001/announcements/getOne/' + announcementId;
+const blogId = urlParams.get('blogId');
+const blog_api_url = 'http://localhost:3001/blogs/getOne/' + blogId;
 
 const sendHttpRequest = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
@@ -31,13 +31,13 @@ const sendHttpRequest = (method, url, data) => {
 };
 
 const getData = () => {
-    sendHttpRequest('GET', 'http://localhost:3001/announcements/getAll').then(responseData => {
+    sendHttpRequest('GET', 'http://localhost:3001/blogs/getAll').then(responseData => {
         console.log(responseData);
     });
 };
 
 const updateData = () => {
-    sendHttpRequest('PUT', 'http://localhost:3001/announcements/update/' + announcementId, {
+    sendHttpRequest('PUT', 'http://localhost:3001/blogs/update/' + blogId, {
 
         header: $('#girilen').val(),
         content: $('#girilen-text').val()
@@ -50,9 +50,9 @@ const updateData = () => {
 };
 
 
-async function getSingleAnnouncement() {
+async function getSingleBlog() {
     try {
-        const response = await fetch(announcement_api_url);
+        const response = await fetch(blog_api_url);
         const data = await response.json();
         const {
             header,
@@ -90,4 +90,4 @@ var save = function() {
     updateData();
 };
 
-getSingleAnnouncement();
+getSingleBlog();

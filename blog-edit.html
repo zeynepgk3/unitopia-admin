@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Blog Oluştur</title>
+    <!-- title değiştirildi -->
+    <title>Blog Düzenle</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -51,30 +52,30 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="tinymce-single responsive-mg-b-30">
-                            <div id="successful" style="display: none;">
-                                <h4>Blog yazınız başarıyla eklendi. Blog sayfasına geri dönün.</h4>
-                                <a href="blog-list.html"><button type="button" class="btn btn-primary">Bloglar</button></a>
-                            </div>
-                            <div id="default">
-                                <div class="alert-title">
-                                    <h2>Yeni Blog Yazısı Oluştur</h2>
-                                    <br>
-                                    <form action="#" method="get">
-                                        <label for="blog-baslik" style="display: block;">Başlık:</label>
-                                        <input type="text" id="blog-header" name="blog-baslik" size="150">
-                                    </form>
-                                    <br>
-                                </div>
-                                <textarea id="blog-content" name="duyuru-icerik" rows="10" cols="150"></textarea>
+                            <div class="alert-title">
+                                <h2>Blog Düzenle</h2>
                                 <br>
-                                <button id="save" class="btn btn-custon-rounded-three btn-success" onclick="save()" type="button">Yayınla</button>
+                                <form action="#" method="get">
+                                    <label for="blog-baslik">Başlık:</label>
+
+                                    <input id="girilen" type="text" name="blog-baslik" style="display:none;">
+                                    <p id="gosterilen"></p>
+                                </form>
+                                <br>
+                                <h5>Blog İçeriği:</h5>
                             </div>
+                            <textarea id="girilen-text" name="blog-icerik" rows="10" cols="150" style="display:none;"></textarea>
+                            <div id="gosterilen-div"></div>
                         </div>
+                        <br>
+                        <button id="edit" class="btn btn-custon-rounded-three btn-warning" onclick="edit()" type="button">Düzenle</button>
+                        <button id="save" class="btn btn-custon-rounded-three btn-success" onclick="save()" type="button">Kaydet</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- tinymce End-->
+    </div>
+    <!-- tinymce End-->
     </div>
 
     <!-- Hazır JS kodları -->
@@ -92,12 +93,13 @@
     <script src="js/metisMenu/metisMenu-active.js"></script>
     <script src="js/summernote/summernote.min.js"></script>
     <script src="js/summernote/summernote-active.js"></script>
+    <!--<script src="js/summernote/summernote-button.js"></script>-->
     <script src="js/tab.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/tawk-chat.js"></script>
     <script src="js/components.js"></script>
-    <script src="js/blog-create.js"></script>
+    <script src="js/blog-edit.js"></script>
 </body>
 
 </html>

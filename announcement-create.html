@@ -61,14 +61,13 @@
                                     <h2>Yeni Duyuru Ekle</h2>
                                     <br>
                                     <form action="#" method="get">
-                                        <label for="duyuru-baslik">Başlık:</label>
+                                        <label for="duyuru-baslik" style="display: block;">Başlık:</label>
                                         <input type="text" id="ann-header" name="duyuru-baslik" size="150">
                                     </form>
                                     <br>
                                     <h5>Duyuru</h5>
                                 </div>
-                                <div id="summernote1">
-                                </div>
+                                <textarea id="ann-content" name="duyuru-icerik" rows="10" cols="150"></textarea>
                                 <br>
                                 <button id="save" class="btn btn-custon-rounded-three btn-success" onclick="save()" type="button">Yayınla</button>
                             </div>

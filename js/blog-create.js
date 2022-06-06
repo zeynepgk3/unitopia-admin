@@ -26,10 +26,11 @@ const sendHttpRequest = (method, url, data) => {
 };
 
 const saveData = () => {
-    sendHttpRequest('POST', 'http://localhost:3001/announcements/create', {
+    sendHttpRequest('POST', 'http://localhost:3001/blogs/create', {
 
-        header: $('#ann-header').val(),
-        content: $('#ann-content').val()
+        header: $('#blog-header').val(),
+        authorId: 1,
+        content: $('#blog-content').val()
 
     }).then(responseData => {
         console.log(responseData);
