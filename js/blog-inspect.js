@@ -37,28 +37,28 @@ const getData = () => {
 };
 
 const approveBlog = () => {
-  sendHttpRequest('PUT', 'http://localhost:3001/blogs/update/' + blogId, {
+    sendHttpRequest('PUT', 'http://localhost:3001/blogs/update/' + blogId, {
 
 
-    status: 'approved'
+        status: 'approved'
 
-  }).then(responseData => {
-    console.log(responseData);
-  }).catch(err => {
-    console.log(err);
-  });
+    }).then(responseData => {
+        console.log(responseData);
+    }).catch(err => {
+        console.log(err);
+    });
 };
 
 const rejectBlog = () => {
-  sendHttpRequest('PUT', 'http://localhost:3001/blogs/update/' + blogId, {
+    sendHttpRequest('PUT', 'http://localhost:3001/blogs/update/' + blogId, {
 
-    status: 'rejected'
+        status: 'rejected'
 
-  }).then(responseData => {
-    console.log(responseData);
-  }).catch(err => {
-    console.log(err);
-  });
+    }).then(responseData => {
+        console.log(responseData);
+    }).catch(err => {
+        console.log(err);
+    });
 };
 
 
@@ -82,13 +82,15 @@ async function getSingleBlog() {
 
 
 var approve = function() {
-  console.log("Approved");
-  approveBlog();
+    console.log("Approved");
+    approveBlog();
+    location.assign('blog-approve.html');
 };
 
 var reject = function() {
-  console.log("Rejected");
-  rejectBlog();
+    console.log("Rejected");
+    rejectBlog();
+    location.assign('blog-approve.html');
 };
 
 getSingleBlog();
