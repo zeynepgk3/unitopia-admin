@@ -1,5 +1,4 @@
 const sendHttpRequest = (method, url, data) => {
-    console.log("girdi2");
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
@@ -27,7 +26,6 @@ const sendHttpRequest = (method, url, data) => {
 };
 
 const saveData = () => {
-    console.log("girdi1");
     sendHttpRequest('POST', 'http://localhost:3001/announcements/create', {
 
         header: $('#ann-header').val(),
