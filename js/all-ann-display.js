@@ -31,7 +31,7 @@ const displayAnnouncements = (announcements) => {
             <td>${announcement.header}</td>
             <td>
                 <button data-toggle="tooltip" title="Düzenle" class="pd-setting-ed"><a href="announcement-edit.html?announcementId=${announcement.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" onclick="remove(${announcement.id})"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button data-toggle="tooltip" title="Sil" class="pd-setting-ed" onclick="remove(${announcement.id})"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
             </td>
             </tr>
         `;
