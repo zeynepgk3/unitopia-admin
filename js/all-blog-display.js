@@ -14,7 +14,7 @@ const remove = async(id) => {
 
 const loadBlogs = async() => {
     try {
-        const res = await fetch('http://localhost:3001/blogs/getAll/author/'+ localStorage.getItem("id"));
+        const res = await fetch('http://localhost:3001/blogs/getAll/author/' + localStorage.getItem("id"));
         allBlogs = await res.json();
         displayBlogs(allBlogs);
     } catch (err) {
@@ -25,12 +25,24 @@ const loadBlogs = async() => {
 const displayBlogs = (blogs) => {
     const htmlString = blogs
         .map((blog) => {
+            var classtype;
+            var stat;
+            if (blog.status == 'approved') {
+                classtype = 'pd-setting';
+                stat = 'Yayınlandı';
+            } else if (blog.status == 'waiting') {
+                classtype = 'ps-setting';
+                stat = 'İnceleniyor';
+            } else if (blog.status == 'rejected') {
+                classtype = 'ds-setting';
+                stat = 'Reddedildi';
+            }
             return `
         <tr>
             <td>${blog.createdAt.substr(8, 2)}/${blog.createdAt.substr(5, 2)}/${blog.createdAt.substr(2, 2)}</td>
             <td>${blog.header}</td>
             <td>
-                <button class="pd-setting">Yayınlandı</button>
+                <button class="${classtype}">${stat}</button>
             </td>
             <td>
                 <button data-toggle="tooltip" title="Düzenle" class="pd-setting-ed"><a href="blog-edit.html?blogId=${blog.id}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>

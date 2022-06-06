@@ -1,15 +1,15 @@
 const blogsList = document.getElementById('display-approve-blogsList');
 let allBlogs = [];
 
-const remove = async (id) => {
-  try {
-    const res = await fetch('http://localhost:3001/blogs/delete/' + id, {
-      method: 'DELETE'
-    });
-    location.reload();
-  } catch (err) {
-    console.error(err);
-  }
+const remove = async(id) => {
+    try {
+        const res = await fetch('http://localhost:3001/blogs/delete/' + id, {
+            method: 'DELETE'
+        });
+        location.reload();
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 // const approveBlog = () => {
@@ -37,25 +37,37 @@ const remove = async (id) => {
 //   });
 // };
 
-const loadBlogs = async () => {
-  try {
-    const res = await fetch('http://localhost:3001/blogs/getAll/');
-    allBlogs = await res.json();
-    displayBlogs(allBlogs);
-  } catch (err) {
-    console.error(err);
-  }
+const loadBlogs = async() => {
+    try {
+        const res = await fetch('http://localhost:3001/blogs/getAll/');
+        allBlogs = await res.json();
+        displayBlogs(allBlogs);
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 const displayBlogs = (blogs) => {
-  const htmlString = blogs
-    .map((blog) => {
-      return `
+    const htmlString = blogs
+        .map((blog) => {
+            var classtype;
+            var stat;
+            if (blog.status == 'approved') {
+                classtype = 'pd-setting';
+                stat = 'Yayınlandı';
+            } else if (blog.status == 'waiting') {
+                classtype = 'ps-setting';
+                stat = 'Beklemede';
+            } else if (blog.status == 'rejected') {
+                classtype = 'ds-setting';
+                stat = 'Reddettiniz';
+            }
+            return `
         <tr>
             <td>${blog.createdAt.substr(8, 2)}/${blog.createdAt.substr(5, 2)}/${blog.createdAt.substr(2, 2)}</td>
             <td>${blog.header}</td>
             <td>
-                <button class="pd-setting">Yayınlandı</button>
+            <button class="${classtype}">${stat}</button>
             </td>
             <td>
                 <button data-toggle="tooltip" title="Incele" class="pd-setting-ed"><a href="blog-inspect.html?blogId=${blog.id}"><i class="fa fa-eye" aria-hidden="true"></i></a></button>
@@ -63,9 +75,9 @@ const displayBlogs = (blogs) => {
             </td>
         </tr>
         `;
-    })
-    .join('');
-  blogsList.innerHTML = htmlString;
+        })
+        .join('');
+    blogsList.innerHTML = htmlString;
 }
 
 // var approve = function() {
