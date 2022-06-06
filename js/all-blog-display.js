@@ -14,7 +14,7 @@ const remove = async(id) => {
 
 const loadBlogs = async() => {
     try {
-        const res = await fetch('http://localhost:3001/blogs/getAll/author/' + localStorage.getItem("id"));
+        const res = await fetch('http://localhost:3001/blogs/getAll/author/'+ localStorage.getItem("id"));
         allBlogs = await res.json();
         displayBlogs(allBlogs);
     } catch (err) {
@@ -28,6 +28,7 @@ const displayBlogs = (blogs) => {
             return `
         <tr>
             <td>${blog.createdAt.substr(8, 2)}/${blog.createdAt.substr(5, 2)}/${blog.createdAt.substr(2, 2)}</td>
+            <td>${blog.header}</td>
             <td>
                 <button class="pd-setting">Yayınlandı</button>
             </td>
@@ -41,3 +42,5 @@ const displayBlogs = (blogs) => {
         .join('');
     blogsList.innerHTML = htmlString;
 }
+
+loadBlogs();
