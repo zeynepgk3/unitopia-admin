@@ -19,8 +19,7 @@ const sendHttpRequest = (method, url, data) => {
     xhr.onload = () => {
       if (xhr.status >= 400) {
         reject(xhr.response);
-      }
-      else {
+      } else {
         resolve(xhr.response);
       }
       // const data = JSON.parse(xhr.response);
@@ -60,25 +59,33 @@ const login = async () => {
   console.log('formEmail', form.email.value);
   console.log('formPassword', form.password.value);
 
-  const data= await fetch('http://localhost:3001/users/login', {
+  const data = await fetch('http://localhost:3001/users/login', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({
       email: form.email.value,
       password: form.password.value
     })
   });
-  console.log("data: ",data);
+  console.log("data: ", data);
 
   loggedUser = await data.json();
-  console.log("loggedUser: ",loggedUser);
+  console.log("loggedUser: ", loggedUser);
 
   localStorage.setItem("name", loggedUser.name);
   localStorage.setItem("role", loggedUser.role);
   localStorage.setItem("email", loggedUser.email);
+  localStorage.setItem("id", loggedUser.id);
 
   localStorage.getItem("name");
-  // location.assign('/index.html');
+
+  // document.getElementByClassName("admin-name").textContent = "Emre";
+
+  location.assign('index.html');
+  console.log(localStorage.getItem("name"));
+  console.log("bruh");
 };
 const logout = () => {
   localStorage.setItem("name", null);
@@ -98,7 +105,7 @@ const register = () => {
   sendHttpRequest('POST', 'http://localhost:3001/users/signup', {
     name: form.name.value,
     email: form.email.value,
-    password: form.password.value,//sadece sayı olunca işe yaramıyor..
+    password: form.password.value, //sadece sayı olunca işe yaramıyor..
   }).then(responseData => {
     console.log("response data: ", responseData);
   }).catch(err => {
@@ -127,4 +134,3 @@ if (registerbtn) {
 if (loginbtn) {
   loginbtn.addEventListener("click", login);
 }
-
